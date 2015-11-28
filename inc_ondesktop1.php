@@ -1,0 +1,1 @@
+<?php include('inc_productgallery.php'); ?>
