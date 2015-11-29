@@ -322,6 +322,7 @@ header{
 footer{
 	border-top:10px solid #263138;
 	padding-bottom: 15px;
+	margin-top: 50px;
 	.footer-section{
 		border-right: 1px solid $grayborder;
 		border-bottom: 1px solid $grayborder;
@@ -2465,4 +2466,268 @@ footer{
 		}
 	}
 
+}
+.topselect-option{
+	text-align: right;
+	span{
+		color: #231f20;
+		font-size: 13px;
+	}
+	.select-holder{
+		position: relative;
+		display: inline-block;
+		i{
+			position: absolute;
+			top:5px;
+			right: 10px;
+		}
+		select{
+			-webkit-appearance: button;
+			-moz-appearance: button;
+			-webkit-user-select: none;
+			-moz-user-select: none;
+			-webkit-padding-end: 20px;
+			-moz-padding-end: 20px;
+			-webkit-padding-start: 5px;
+			-moz-padding-start: 5px;
+			background-color: white;
+			border:1px solid #cccccc;
+			border-radius: 0;
+			font-size: 13px;
+			color: #929497;
+			padding: 5px;
+			padding-right: 30px;
+
+			::-webkit-input-placeholder {
+
+			}
+			:-moz-placeholder {
+
+			}
+			::-moz-placeholder {
+
+			}
+			:-ms-input-placeholder {
+
+			}
+		}
+	}
+}
+.order-list{
+	@include cl;
+	.order-main-row{
+		margin-bottom: 5px;
+		@include cl;
+		&:last-child{
+			margin-bottom: 15px;
+		}
+		.row-bar{
+			background-color: #eaf5f7;
+			padding: 5px 20px;
+			@include cl;
+			position: relative;
+			.sign{
+				position: absolute;
+				left: 15px;top:25%;
+				color: black;
+				font-size: 21px;
+
+				&:before{
+					content: "\f0da";
+					font-family: $fontawesome;
+				}
+			}
+
+			.rowbar-col{
+				padding-top: 5px;
+				vertical-align: middle;
+				ul{
+					list-style: none;
+					color: #808184;
+					li{
+						&:first-child{
+							font-size: 11px;
+							span{
+								color: #00b1d7;
+							}
+						}
+					}
+				}
+			}
+			.status{
+				font-size: 17px;
+				text-align: right;
+				margin-top: 15px;
+				&.closed{
+					color: #37b34a;
+					&:before{
+						content: "\f058";
+						font-family: $fontawesome;
+					}
+				}
+			}
+		}
+		.order-row-child{
+			display: none;
+			padding-top: 5px;
+			padding-bottom: 5px;
+			border:1px solid #dcddde;
+			border-top:0;
+			@include cl;
+			.row-col{
+				min-height: 120px;
+				display: table;
+			}
+			figure{
+				width: 120px;
+				height: 120px;
+				margin: auto;
+				background-size: cover;
+				-webkit-background-size: cover;
+				-moz-background-size: cover;
+				-o-background-size: cover;
+				background-position: center center;
+
+			}
+			.product-title{
+				font-size: 15px;
+				color: #231f20;
+				display: table-cell;
+				vertical-align: middle;
+			}
+			.order-status{
+				text-align: right;
+				display: table-cell;
+				vertical-align: middle;
+			}
+		}
+		&.active{
+			.row-bar{
+				.sign{
+					&:before{
+						content: "\f0d7";
+					}
+				}
+			}
+		}
+
+	}
+
+
+}
+.order-status-component{
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	margin-top: 15px;
+	margin-bottom: 15px;
+	@include cl;
+	li{
+		float: left;
+		padding-right: 5px;
+		font-size: 15px;
+		&:after{
+			content: "|";
+			padding-left: 5px;
+		}
+		&:last-child{
+			&:after{
+				content: "";
+			}
+		}
+	}
+}
+.order-status{
+	.order-main-row{
+		.row-bar{
+			background-color: #f1f1f2;
+			padding-top: 20px;
+			padding-bottom: 20px;
+			ul{
+				list-style: none;
+				margin: 0;
+				padding: 0;
+				margin-left: 10px;
+				li{
+					float: left;
+					padding-right: 23px;
+					font-size: 13px;
+					color: black;
+					&:after{
+						content: "|";
+						padding-left: 23px;
+						color: #bbbdbf;
+					}
+					&:last-child{
+						&:after{
+							content: "";
+						}
+					}
+					&.closed{
+						color: #37b34a;
+					}
+				}
+			}
+		}
+		.order-row-child{
+			display: block;
+			.current-status{
+				text-align: center;
+				img{
+					max-width: 100%;
+					height: auto;
+				}
+			}
+			h4{
+				font-size: 15px;
+			}
+			.product-detail{
+				padding-top: 15px;
+				font-size: 15px;
+				span{
+					font-size: 13px;
+					color: #808184;
+				}
+			}
+			.img-product{
+				width: 100%;
+				height: auto;
+			}
+		}
+	}
+}
+.order-status-tb{
+	margin-top: 30px;
+	margin-bottom: 30px;
+	&.tablesaw{
+		thead{
+			background:none;
+			background-color:#f1f1f2;
+			tr{
+				th{
+					&:first-child{
+						min-width: 150px;
+					}
+				}
+			}
+		}
+	}
+	tbody{
+		tr{
+			td{
+				font-size: 13px;
+				color: #929497;
+				&:first-child{
+					border-right: 1px solid #e4e1de;
+				}
+			}
+		}
+	}
+}
+
+@media only screen
+and (min-device-width : 320px)
+and (max-device-width : 480px){
+	container{min-width: 0;}
+	container-fluid{min-width: 0;}
 }
